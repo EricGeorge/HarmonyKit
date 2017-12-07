@@ -1,8 +1,8 @@
 import Foundation
 
 public struct Scale {
-    let root: Note
-    let type: ScaleType
+    public let root: Note
+    public let type: ScaleType
     
     public init(_ root: Note, _ type: ScaleType) {
         self.root = root

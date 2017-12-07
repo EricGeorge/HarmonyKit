@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Note: CustomStringConvertible {
+public struct Note {
     let noteType: NoteType
     let accidental: Accidental
     
@@ -10,39 +10,36 @@ public struct Note: CustomStringConvertible {
     }
     
     var value: Int {
-        switch (noteType, accidental) {
-        case (.B, .sharp): return 0
-        case (.C, .natural): return 0
-        case (.C, .sharp): return 1
-        case (.D, .flat): return 1
-        case (.D, .natural): return 2
-        case (.D, .sharp): return 3
-        case (.E, .flat): return 3
-        case (.E, .natural): return 4
-        case (.F, .flat): return 4
-        case (.E, .sharp): return 5
-        case (.F, .natural): return 5
-        case (.F, .sharp): return 6
-        case (.G, .flat): return 6
-        case (.G, .natural): return 7
-        case (.G, .sharp): return 8
-        case (.A, .flat): return 8
-        case (.A, .natural): return 9
-        case (.A, .sharp): return 10
-        case (.B, .flat): return 10
-        case (.B, .natural): return 11
-        case (.C, .flat): return 11
+        var noteValue = 0
+        
+        // halfsteps from C which is reference 0
+        switch (noteType) {
+        case .C: noteValue = 0
+        case .D: noteValue =  2
+        case .E: noteValue =  4
+        case .F: noteValue =  5
+        case .G: noteValue =  7
+        case .A: noteValue =  9
+        case .B: noteValue =  11
         }
+        
+        // adjust for accidental
+        return noteValue + accidental.rawValue
     }
-    
-    static func -(lhs: Note, rhs: Note) -> Interval {
+
+}
+
+extension Note {
+    public static func -(lhs: Note, rhs: Note) -> Interval {
         var lhs = lhs.value
         if lhs < rhs.value {
             lhs += 12
         }
         return Interval(rawValue: lhs - rhs.value)!
     }
-    
+}
+
+extension Note: CustomStringConvertible {
     public var description: String {
         return "\(noteType.description)\(accidental.description(true))"
     }

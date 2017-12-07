@@ -13,3 +13,13 @@ public enum ScaleType {
         }
     }
 }
+
+extension ScaleType : CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .major: return "Major"
+        case .minor: return "Minor"
+        case .harmonicMinor: return "Harmonic Minor"
+        }
+    }
+}
