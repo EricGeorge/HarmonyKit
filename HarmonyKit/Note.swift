@@ -1,5 +1,7 @@
 import Foundation
 
+/** A note is abstract and does not have any octave/midi context.  It is for descriptions of scales and chords and represents one of the 12 chromatic notes
+ */
 public struct Note {
     let name: LetterName
     let accidental: Accidental

@@ -1,6 +1,6 @@
 import Foundation
 
-public enum NoteType: UInt {
+public enum LetterName: UInt {
     case C
     case D
     case E
@@ -10,19 +10,19 @@ public enum NoteType: UInt {
     case B
 }
 
-extension NoteType {
-    static func +(lhs: NoteType, rhs: UInt) -> NoteType {
+extension LetterName {
+    static func +(lhs: LetterName, rhs: UInt) -> LetterName {
         let newRawValue = (lhs.rawValue + rhs) % 7
-        return NoteType(rawValue: newRawValue)!
+        return LetterName(rawValue: newRawValue)!
     }
     
-    static postfix func ++(noteType: inout NoteType) -> NoteType {
+    static postfix func ++(noteType: inout LetterName) -> LetterName {
         noteType = noteType + 1
         return noteType
     }
 }
 
-extension NoteType: CustomStringConvertible {
+extension LetterName: CustomStringConvertible {
     public var description: String {
         switch self {
         case .C: return "C"
