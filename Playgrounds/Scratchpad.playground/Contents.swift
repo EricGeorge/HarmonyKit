@@ -1,5 +1,6 @@
 import HarmonyKit
 
-let scale = Scale(Note(.F, .sharp), .major)
+let root = Note(.F, .sharp)
+let scale = Scale(root, .major)
 print("The \(scale.root) \(scale.type) scale is \(scale.notes)")
 

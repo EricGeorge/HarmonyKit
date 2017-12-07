@@ -1,11 +1,11 @@
 import Foundation
 
 public struct Note {
-    let noteType: NoteType
+    let name: LetterName
     let accidental: Accidental
     
-    public init(_ noteType: NoteType, _ accidental: Accidental) {
-        self.noteType = noteType
+    public init(_ name: LetterName, _ accidental: Accidental) {
+        self.name = name
         self.accidental = accidental
     }
     
@@ -13,7 +13,7 @@ public struct Note {
         var noteValue = 0
         
         // halfsteps from C which is reference 0
-        switch (noteType) {
+        switch (name) {
         case .C: noteValue = 0
         case .D: noteValue =  2
         case .E: noteValue =  4
@@ -26,7 +26,6 @@ public struct Note {
         // adjust for accidental
         return noteValue + accidental.rawValue
     }
-
 }
 
 extension Note {
@@ -41,8 +40,7 @@ extension Note {
 
 extension Note: CustomStringConvertible {
     public var description: String {
-        return "\(noteType.description)\(accidental.description(true))"
+        return "\(name.description)\(accidental.description(true))"
     }
 }
-
 
