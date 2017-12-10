@@ -1,17 +1,21 @@
 import Foundation
 
-/** A note is abstract and does not have any octave/midi context.  It is for descriptions of scales and chords and represents one of the 12 chromatic notes
- */
 public struct Note {
     let name: LetterName
     let accidental: Accidental
+    let octave: Int
     
-    public init(_ name: LetterName, _ accidental: Accidental) {
-        self.name = name
-        self.accidental = accidental
+    public var midi: Int {
+        return self.chromaticValue + (octave + 2) * 12
     }
     
-    var value: Int {
+    public init(_ name: LetterName, _ accidental: Accidental, _ octave: Int) {
+        self.name = name
+        self.accidental = accidental
+        self.octave = octave
+    }
+    
+    var chromaticValue: Int {
         var noteValue = 0
         
         // halfsteps from C which is reference 0
@@ -32,17 +36,21 @@ public struct Note {
 
 extension Note {
     public static func -(lhs: Note, rhs: Note) -> Interval {
-        var lhs = lhs.value
-        if lhs < rhs.value {
+        var lhs = lhs.chromaticValue
+        if lhs < rhs.chromaticValue {
             lhs += 12
         }
-        return Interval(rawValue: lhs - rhs.value)!
+        return Interval(rawValue: lhs - rhs.chromaticValue)!
     }
 }
 
 extension Note: CustomStringConvertible {
     public var description: String {
-        return "\(name.description)\(accidental.description(true))"
+        return "\(name.description)\(accidental.description(true))\(octave)"
     }
 }
 
+// MARK: Helpers
+func nextNatural(_ note: Note) -> Note {
+    return Note((note.name + 1), .natural, (note.name == .B) ? (note.octave + 1) : note.octave)
+}

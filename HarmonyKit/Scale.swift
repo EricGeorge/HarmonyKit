@@ -14,14 +14,14 @@ public struct Scale {
         for interval in type.intervals {
             // a diatonic scale has one of each note name.
             // first figure out the next note name
-            let scaleNote = Note((scale.last?.name)! + 1, .natural)
+            let scaleNote = nextNatural(scale.last!)
             
             // then calculate the interval to the root
             let scaleNoteInterval = scaleNote - root
             
             // compare that interval to the prescribed one in the ScaleType and adjust using an accidental
             let accidental = Accidental(rawValue: interval.halfsteps - scaleNoteInterval.halfsteps)
-            let finalNote = Note(scaleNote.name, accidental!)
+            let finalNote = Note(scaleNote.name, accidental!, scaleNote.octave)
             
             scale = scale + [finalNote]
         }
