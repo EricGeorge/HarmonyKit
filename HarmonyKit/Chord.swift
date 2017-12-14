@@ -1,26 +1,17 @@
 import Foundation
 
-public struct DiatonicChord {
-    let scale: Scale
-    let indexOfRoot: Int
+public func diatonicChord(for scale: Scale, at degree: Int) -> [Note] {
+    let indexOfRoot = degree - 1
     
-    public init(_ scale: Scale, _ degree: Int) {
-        self.scale = scale
-        self.indexOfRoot = degree - 1
-    }
+    let extendedScale = extend(for: scale, by: 7)
     
-    public var notes: [Note] {
-        
-        let extendedScale = extend(for: scale, by: 7)
-        
-        var triad = [extendedScale[indexOfRoot]]
-        
-        let third = indexOfRoot + 2
-        triad = triad + [extendedScale[third]]
-        
-        let fifth = indexOfRoot + 4
-        triad = triad + [extendedScale[fifth]]
-        
-        return triad
-    }
+    var triad = [extendedScale[indexOfRoot]]
+    
+    let third = indexOfRoot + 2
+    triad = triad + [extendedScale[third]]
+    
+    let fifth = indexOfRoot + 4
+    triad = triad + [extendedScale[fifth]]
+    
+    return triad
 }
