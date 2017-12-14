@@ -27,4 +27,16 @@ public struct Scale {
         }
         return scale
     }
+
+}
+
+// MARK: Helpers
+public func extend(for scale: Scale, by count:Int) -> [Note] {
+    var extendedScale = scale.notes
+    
+    for index in 0...count {
+        extendedScale = extendedScale + [Note(extendedScale[index].name, extendedScale[index].accidental, extendedScale[index].octave + 1)]
+    }
+    
+    return extendedScale
 }
