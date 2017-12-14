@@ -1,23 +1,48 @@
 import Foundation
 
-public func chordName(for chord: [Note]) -> String {
-    var intervals: [Interval] = []
-    var chordName: String = ""
+public struct Chord {
+    let notes: [Note]
+    let type: ChordType
+    let root: Note
     
-    for index in 1...chord.count - 1 {
-        intervals = intervals + [chord[index] - chord[index - 1]]
+    public init(_ root: Note, _ type: ChordType) {
+        self.root = root
+        self.type = type
+        
+        // Todo:  Notes
+        self.notes = []
     }
     
-    for chordType in ChordType.all {
-        if chordType.intervals == intervals {
-            chordName = chordType.description
+    public init(_ notes: [Note]) {
+        self.notes = notes
+        self.root = notes.first!
+        
+        var type: ChordType = .unknown
+        
+        var intervals: [Interval] = []
+        for index in 1...notes.count - 1 {
+            intervals = intervals + [notes[index] - notes[index - 1]]
         }
+        
+        for chordType in ChordType.all {
+            if chordType.intervals == intervals {
+                type = chordType
+                break
+            }
+        }
+        
+        self.type = type
     }
-    
-    return chordName
 }
 
-public func diatonicChord(for scale: Scale, at degree: Int) -> [Note] {
+extension Chord: CustomStringConvertible {
+    public var description: String {
+        return "\(self.notes.first!)\(self.type.description)"
+    }
+}
+
+// MARK: Helpers
+public func diatonicChord(for scale: Scale, at degree: Int) -> Chord {
     let indexOfRoot = degree - 1
     
     let extendedScale = extend(for: scale, by: 7)
@@ -30,5 +55,5 @@ public func diatonicChord(for scale: Scale, at degree: Int) -> [Note] {
     let fifth = indexOfRoot + 4
     triad = triad + [extendedScale[fifth]]
     
-    return triad
+    return Chord(triad)
 }

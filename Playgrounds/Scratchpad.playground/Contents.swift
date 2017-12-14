@@ -10,7 +10,6 @@ let extendedScale = extend(for: scale, by: 7)
 
 for index in 1...scale.notes.count {
     let triad = diatonicChord(for: scale, at: index)
-    let name = chordName(for: triad)
-    print("The degree \(index) diatonic chord for \(scale.root) \(scale.type) is \(triad) or \(triad[0].description(true))\(name)")
+    print("The degree \(index) diatonic chord for \(scale.root) \(scale.type) is \(triad)")
 }
 

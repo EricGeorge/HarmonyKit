@@ -1,10 +1,11 @@
 import Foundation
 
-enum ChordType {
+public enum ChordType {
     case major
     case minor
     case diminished
     case augmented
+    case unknown
     
     public static let all:[ChordType] = [.major, minor, .diminished, .augmented]
     
@@ -14,6 +15,7 @@ enum ChordType {
         case .minor: return [.m3, .M3]
         case .diminished: return [.m3, .m3]
         case .augmented: return [.M3, .M3]
+        case .unknown: return []
         }
     }
 }
@@ -25,6 +27,7 @@ extension ChordType : CustomStringConvertible {
         case .minor: return "m"
         case .diminished: return "°"
         case .augmented: return "+"
+        case .unknown: return "unknown"
         }
     }
 }
