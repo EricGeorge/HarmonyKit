@@ -8,7 +8,7 @@ public struct Scale {
         self.root = root
         self.type = type
     }
-    
+
     public var notes: [Note] {
         var scale = [root]
         for interval in type.intervals {
@@ -28,6 +28,40 @@ public struct Scale {
         return scale
     }
 
+}
+
+public extension Scale {
+    public var tonic: Chord {
+        return Chord([notes[0], notes[2], notes[4]])
+    }
+    
+    public var supertonic: Chord {
+        return Chord([notes[1], notes[3], notes[5]])
+    }
+    
+    public var mediant: Chord {
+        return Chord([notes[2], notes[4], notes[6]])
+    }
+    
+    public var subdominant: Chord {
+        let notes = extend(for: self, by: 7)
+        return Chord([notes[3], notes[5], notes[7]])
+    }
+
+    public var dominant: Chord {
+        let notes = extend(for: self, by: 7)
+        return Chord([notes[4], notes[6], notes[8]])
+    }
+    
+    public var submedian: Chord {
+        let notes = extend(for: self, by: 7)
+        return Chord([notes[5], notes[7], notes[9]])
+    }
+    
+    public var leading: Chord {
+        let notes = extend(for: self, by: 7)
+        return Chord([notes[6], notes[8], notes[10]])
+    }
 }
 
 // MARK: Helpers

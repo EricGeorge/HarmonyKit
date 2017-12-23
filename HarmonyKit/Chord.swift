@@ -1,17 +1,17 @@
 import Foundation
 
 public struct Chord {
-    let notes: [Note]
+    public let notes: [Note]
     let type: ChordType
     let root: Note
     
-    public init(_ root: Note, _ type: ChordType) {
-        self.root = root
-        self.type = type
-        
-        // Todo:  Notes
-        self.notes = []
-    }
+//    public init(_ root: Note, _ type: ChordType) {
+//        self.root = root
+//        self.type = type
+//        
+//        // Todo:  Notes
+//        self.notes = []
+//    }
     
     public init(_ notes: [Note]) {
         self.notes = notes
