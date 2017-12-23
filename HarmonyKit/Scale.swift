@@ -1,5 +1,27 @@
 import Foundation
 
+enum ScaleDegree {
+    case tonic
+    case supertonic
+    case mediant
+    case subdominant
+    case dominant
+    case submedian
+    case leading
+    
+    var indexes: [Int] {
+        switch self {
+        case .tonic: return [0,2,4]
+        case .supertonic: return [1,3,5]
+        case .mediant: return [2,4,6]
+        case .subdominant: return [3,5,7]
+        case .dominant: return [4,6,8]
+        case .submedian: return [5,7,9]
+        case .leading: return [6,8,10]
+        }
+    }
+}
+
 public struct Scale {
     public let root: Note
     public let type: ScaleType
@@ -32,35 +54,35 @@ public struct Scale {
 
 public extension Scale {
     public var tonic: Chord {
-        return Chord([notes[0], notes[2], notes[4]])
+        return Chord(ScaleDegree.tonic.indexes.map { notes[$0] })
     }
     
     public var supertonic: Chord {
-        return Chord([notes[1], notes[3], notes[5]])
+        return Chord(ScaleDegree.supertonic.indexes.map { notes[$0] })
     }
     
     public var mediant: Chord {
-        return Chord([notes[2], notes[4], notes[6]])
+        return Chord(ScaleDegree.mediant.indexes.map { notes[$0] })
     }
     
     public var subdominant: Chord {
         let notes = extend(for: self, by: 7)
-        return Chord([notes[3], notes[5], notes[7]])
+        return Chord(ScaleDegree.subdominant.indexes.map { notes[$0] })
     }
-
+    
     public var dominant: Chord {
         let notes = extend(for: self, by: 7)
-        return Chord([notes[4], notes[6], notes[8]])
+        return Chord(ScaleDegree.dominant.indexes.map { notes[$0] })
     }
     
     public var submedian: Chord {
         let notes = extend(for: self, by: 7)
-        return Chord([notes[5], notes[7], notes[9]])
+        return Chord(ScaleDegree.submedian.indexes.map { notes[$0] })
     }
     
     public var leading: Chord {
         let notes = extend(for: self, by: 7)
-        return Chord([notes[6], notes[8], notes[10]])
+        return Chord(ScaleDegree.leading.indexes.map { notes[$0] })
     }
 }
 
