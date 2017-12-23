@@ -48,10 +48,6 @@ extension Note: CustomStringConvertible {
     public var description: String {
         return "\(name.description)\(accidental.description(true))\(octave)"
     }
-    
-    public func description(_ stripOctave: Bool = false) -> String {
-        return "\(name.description)\(accidental.description(true))"
-    }
 }
 
 // MARK: Helpers
