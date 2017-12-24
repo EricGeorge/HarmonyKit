@@ -1,5 +1,7 @@
 import Foundation
 
+public typealias Notes = [Note]
+
 public struct Note {
     let name: LetterName
     let accidental: Accidental

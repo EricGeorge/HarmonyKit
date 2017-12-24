@@ -19,6 +19,8 @@
 		073C4FAF1FE2153600C0B809 /* ChordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C4FAD1FE2153600C0B809 /* ChordType.swift */; };
 		078349FF1FCE39A3005ADCEC /* HarmonyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 078349F51FCE39A3005ADCEC /* HarmonyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07834A001FCE39A3005ADCEC /* HarmonyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 078349F51FCE39A3005ADCEC /* HarmonyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07AAE4771FEF52DD004CFCD3 /* ScaleDegree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAE4761FEF52DD004CFCD3 /* ScaleDegree.swift */; };
+		07AAE4781FEF52DD004CFCD3 /* ScaleDegree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AAE4761FEF52DD004CFCD3 /* ScaleDegree.swift */; };
 		07AE30A21FD8D502004426E6 /* LetterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B55AEE1FD8C72D003B8BA6 /* LetterName.swift */; };
 		07B55AEF1FD8C72D003B8BA6 /* LetterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B55AEE1FD8C72D003B8BA6 /* LetterName.swift */; };
 		07C1A36A1FD89E360078DC78 /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C1A3691FD89E360078DC78 /* Interval.swift */; };
@@ -38,6 +40,7 @@
 		078349F41FCE39A3005ADCEC /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		078349F51FCE39A3005ADCEC /* HarmonyKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HarmonyKit.h; sourceTree = "<group>"; };
 		078349F61FCE39A3005ADCEC /* Info-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		07AAE4761FEF52DD004CFCD3 /* ScaleDegree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleDegree.swift; sourceTree = "<group>"; };
 		07B55AEE1FD8C72D003B8BA6 /* LetterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterName.swift; sourceTree = "<group>"; };
 		07C1A3691FD89E360078DC78 /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		07C1A36C1FD89EA60078DC78 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 				07B55AEE1FD8C72D003B8BA6 /* LetterName.swift */,
 				07C1A36C1FD89EA60078DC78 /* Note.swift */,
 				071573DB1FCE40EC004CDF81 /* Scale.swift */,
+				07AAE4761FEF52DD004CFCD3 /* ScaleDegree.swift */,
 				071573D81FCE40D9004CDF81 /* ScaleType.swift */,
 				07A36C2C1FCE3C330097DFF7 /* Playgrounds */,
 				078349F31FCE39A3005ADCEC /* Supporting Files */,
@@ -239,6 +243,7 @@
 				073C4FAE1FE2153600C0B809 /* ChordType.swift in Sources */,
 				071573DC1FCE40EC004CDF81 /* Scale.swift in Sources */,
 				071573D91FCE40D9004CDF81 /* ScaleType.swift in Sources */,
+				07AAE4771FEF52DD004CFCD3 /* ScaleDegree.swift in Sources */,
 				073C4FA81FE1D28800C0B809 /* Chord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +259,7 @@
 				073C4FAF1FE2153600C0B809 /* ChordType.swift in Sources */,
 				07C1A36E1FD89EA60078DC78 /* Note.swift in Sources */,
 				071573DD1FCE40EC004CDF81 /* Scale.swift in Sources */,
+				07AAE4781FEF52DD004CFCD3 /* ScaleDegree.swift in Sources */,
 				073C4FA91FE1D28800C0B809 /* Chord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

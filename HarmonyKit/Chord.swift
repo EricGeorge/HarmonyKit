@@ -1,7 +1,7 @@
 import Foundation
 
 public struct Chord {
-    public let notes: [Note]
+    public let notes: Notes
     let type: ChordType
     let root: Note
     
@@ -13,7 +13,7 @@ public struct Chord {
 //        self.notes = []
 //    }
     
-    public init(_ notes: [Note]) {
+    public init(_ notes: Notes) {
         self.notes = notes
         self.root = notes.first!
         

@@ -16,3 +16,4 @@ print("The dominant chord for \(scale.root) \(scale.type) is \(scale.dominant): 
 print("The submedian chord for \(scale.root) \(scale.type) is \(scale.submedian): \(scale.submedian.notes)")
 print("The leading chord for \(scale.root) \(scale.type) is \(scale.leading): \(scale.leading.notes)")
 
+print("Alternative way of getting scale degree: \(ScaleDegree.dominant.appliedTo(scale))")

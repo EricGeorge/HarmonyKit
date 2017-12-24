@@ -1,27 +1,5 @@
 import Foundation
 
-enum ScaleDegree {
-    case tonic
-    case supertonic
-    case mediant
-    case subdominant
-    case dominant
-    case submedian
-    case leading
-    
-    var indexes: [Int] {
-        switch self {
-        case .tonic: return [0,2,4]
-        case .supertonic: return [1,3,5]
-        case .mediant: return [2,4,6]
-        case .subdominant: return [3,5,7]
-        case .dominant: return [4,6,8]
-        case .submedian: return [5,7,9]
-        case .leading: return [6,8,10]
-        }
-    }
-}
-
 public struct Scale {
     public let root: Note
     public let type: ScaleType
@@ -31,7 +9,22 @@ public struct Scale {
         self.type = type
     }
 
-    public var notes: [Note] {
+    public func notes(for octaves: Int) -> Notes {
+        if octaves < 1 {
+            return []
+        }
+        
+        var notes = self.notes
+        
+        if octaves > 1 {
+            for index in 0...(octaves - 1) * 7 {
+                notes = notes + [Note(notes[index].name, notes[index].accidental, notes[index].octave + 1)]
+            }
+        }
+        return notes
+    }
+    
+    var notes: Notes {
         var scale = [root]
         for interval in type.intervals {
             // a diatonic scale has one of each note name.
@@ -49,7 +42,6 @@ public struct Scale {
         }
         return scale
     }
-
 }
 
 public extension Scale {
@@ -66,33 +58,19 @@ public extension Scale {
     }
     
     public var subdominant: Chord {
-        let notes = extend(for: self, by: 7)
-        return Chord(ScaleDegree.subdominant.indexes.map { notes[$0] })
+        return Chord(ScaleDegree.subdominant.indexes.map { self.notes(for: 2)[$0] })
     }
     
     public var dominant: Chord {
-        let notes = extend(for: self, by: 7)
-        return Chord(ScaleDegree.dominant.indexes.map { notes[$0] })
+         return Chord(ScaleDegree.dominant.indexes.map { self.notes(for: 2)[$0] })
     }
     
     public var submedian: Chord {
-        let notes = extend(for: self, by: 7)
-        return Chord(ScaleDegree.submedian.indexes.map { notes[$0] })
+        return Chord(ScaleDegree.submedian.indexes.map { self.notes(for: 2)[$0] })
     }
     
     public var leading: Chord {
-        let notes = extend(for: self, by: 7)
-        return Chord(ScaleDegree.leading.indexes.map { notes[$0] })
+        return Chord(ScaleDegree.leading.indexes.map { self.notes(for: 2)[$0] })
     }
 }
 
-// MARK: Helpers
-public func extend(for scale: Scale, by count:Int) -> [Note] {
-    var extendedScale = scale.notes
-    
-    for index in 0...count {
-        extendedScale = extendedScale + [Note(extendedScale[index].name, extendedScale[index].accidental, extendedScale[index].octave + 1)]
-    }
-    
-    return extendedScale
-}
