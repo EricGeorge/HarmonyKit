@@ -9,7 +9,7 @@ public enum ScaleDegree {
     case submedian
     case leading
     
-    var indexes: [Int] {
+    var triads: [Int] {
         switch self {
         case .tonic: return [0,2,4]
         case .supertonic: return [1,3,5]
@@ -22,7 +22,7 @@ public enum ScaleDegree {
     }
     
     public func appliedTo(_ scale: Scale) -> [Note] {
-        return self.indexes.map { scale.notes(for: 2)[$0] }
+        return self.triads.map { scale.notes(for: 2)[$0] }
     }
 }
 

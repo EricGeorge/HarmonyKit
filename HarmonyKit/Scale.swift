@@ -45,32 +45,32 @@ public struct Scale {
 }
 
 public extension Scale {
-    public var tonic: Chord {
-        return Chord(ScaleDegree.tonic.indexes.map { notes[$0] })
+    public var tonicTriad: Chord {
+        return Chord(ScaleDegree.tonic.triads.map { notes[$0] })
     }
     
-    public var supertonic: Chord {
-        return Chord(ScaleDegree.supertonic.indexes.map { notes[$0] })
+    public var supertonicTriad: Chord {
+        return Chord(ScaleDegree.supertonic.triads.map { notes[$0] })
     }
     
-    public var mediant: Chord {
-        return Chord(ScaleDegree.mediant.indexes.map { notes[$0] })
+    public var mediantTriad: Chord {
+        return Chord(ScaleDegree.mediant.triads.map { notes[$0] })
     }
     
-    public var subdominant: Chord {
-        return Chord(ScaleDegree.subdominant.indexes.map { self.notes(for: 2)[$0] })
+    public var subdominantTriad: Chord {
+        return Chord(ScaleDegree.subdominant.triads.map { self.notes(for: 2)[$0] })
     }
     
-    public var dominant: Chord {
-         return Chord(ScaleDegree.dominant.indexes.map { self.notes(for: 2)[$0] })
+    public var dominantTriad: Chord {
+         return Chord(ScaleDegree.dominant.triads.map { self.notes(for: 2)[$0] })
     }
     
-    public var submedian: Chord {
-        return Chord(ScaleDegree.submedian.indexes.map { self.notes(for: 2)[$0] })
+    public var submedianTriad: Chord {
+        return Chord(ScaleDegree.submedian.triads.map { self.notes(for: 2)[$0] })
     }
     
-    public var leading: Chord {
-        return Chord(ScaleDegree.leading.indexes.map { self.notes(for: 2)[$0] })
+    public var leadingTriad: Chord {
+        return Chord(ScaleDegree.leading.triads.map { self.notes(for: 2)[$0] })
     }
 }
 
