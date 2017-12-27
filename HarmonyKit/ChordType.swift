@@ -24,11 +24,30 @@ public enum ChordType {
             
         case .sus2: return [.M2, .P4]
         case .sus4: return [.P4, .M2]
-        
+            
         case .dominantSeventh: return [.M3, .m3, .m3]
         case .majorSeventh: return [.M3, .m3, .M3]
         case .minorMajorSeventh: return [.m3, .M3, .M3]
         case .minorSeventh: return [.m3, .M3, .m3]
+            
+        case .unknown: return []
+        }
+    }
+        
+    var parts: [ChordPart] {
+        switch self {
+        case .major: return [.first, .third, .fifth]
+        case .minor: return [.first, .flatThird, .fifth]
+        case .diminished: return [.first, .flatThird, .flatFifth]
+        case .augmented: return [.first, .third, .sharpFifth]
+            
+        case .sus2: return [.first, .second, .fifth]
+        case .sus4: return [.first, .fourth, .fifth]
+        
+        case .dominantSeventh: return [.first, .third, .fifth, .flatSeventh]
+        case .majorSeventh: return [.first, .third, .fifth, .seventh]
+        case .minorMajorSeventh: return [.first, .flatThird, .fifth, .seventh]
+        case .minorSeventh: return [.first, .flatThird, .fifth, .flatSeventh]
 
         case .unknown: return []
         }

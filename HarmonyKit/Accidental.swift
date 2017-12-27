@@ -6,9 +6,14 @@ public enum Accidental: Int {
     case natural = 0
     case sharp = 1
     case doubleSharp = 2
-    
 }
-    
+
+extension Accidental {
+    static func +(lhs: Accidental, rhs: Accidental) -> Accidental {
+        return Accidental(rawValue: lhs.rawValue + rhs.rawValue)!
+    }
+}
+
 extension Accidental: CustomStringConvertible {
     public var description: String {
         switch self {

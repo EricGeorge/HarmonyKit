@@ -16,4 +16,9 @@ print("The dominant chord for \(scale.root) \(scale.type) is \(scale.dominantTri
 print("The submedian chord for \(scale.root) \(scale.type) is \(scale.submedianTriad): \(scale.submedianTriad.notes)")
 print("The leading chord for \(scale.root) \(scale.type) is \(scale.leadingTriad): \(scale.leadingTriad.notes)")
 
-print("Alternative way of getting scale degree: \(ScaleDegree.dominantTriad.appliedTo(scale))")
+print("Alternative way of getting scale degree: \(ScaleDegree.dominant.appliedTo(scale))")
+
+print("\n")
+
+let cMajorChord = Chord(Note(.C, .natural, 5), .minorSeventh)
+print("\(cMajorChord) is \(cMajorChord.notes)")
