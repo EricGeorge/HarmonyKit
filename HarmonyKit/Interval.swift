@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Interval: Int {
+internal enum Interval: Int {
     case unison = 0
     case m2 = 1
     case M2 = 2

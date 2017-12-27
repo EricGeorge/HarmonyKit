@@ -17,7 +17,7 @@ public struct Chord {
                                           scaleNotes[$0.index].octave) }
     }
     
-    public init(_ notes: Notes) {
+    internal init(_ notes: Notes) {
         self.notes = notes
         self.root = notes.first!
         

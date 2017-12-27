@@ -8,8 +8,9 @@ public enum Accidental: Int {
     case doubleSharp = 2
 }
 
+// TODO - deal with boundary issues
 extension Accidental {
-    static func +(lhs: Accidental, rhs: Accidental) -> Accidental {
+    internal static func +(lhs: Accidental, rhs: Accidental) -> Accidental {
         return Accidental(rawValue: lhs.rawValue + rhs.rawValue)!
     }
 }
