@@ -10,7 +10,7 @@ public enum Accidental: Int {
 
 // TODO - deal with boundary issues
 extension Accidental {
-    internal static func +(lhs: Accidental, rhs: Accidental) -> Accidental {
+    static func +(lhs: Accidental, rhs: Accidental) -> Accidental {
         return Accidental(rawValue: lhs.rawValue + rhs.rawValue)!
     }
 }

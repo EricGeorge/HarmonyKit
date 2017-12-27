@@ -1,6 +1,6 @@
 import Foundation
 
-internal enum ChordPart {
+enum ChordPart {
     case first
     case second
     case flatThird

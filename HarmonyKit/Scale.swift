@@ -9,7 +9,7 @@ public struct Scale {
         self.type = type
     }
 
-    public func notes(for octaves: Int) -> Notes {
+    func notes(for octaves: Int) -> Notes {
         if octaves < 1 {
             return []
         }
@@ -24,7 +24,7 @@ public struct Scale {
         return notes
     }
     
-    var notes: Notes {
+    public var notes: Notes {
         var scale = [root]
         for interval in type.intervals {
             // a diatonic scale has one of each note name.
@@ -44,7 +44,7 @@ public struct Scale {
     }
 }
 
-public extension Scale {
+extension Scale {
     public var tonicTriad: Chord {
         return Chord(ScaleDegree.tonic.triads.map { notes[$0] })
     }

@@ -37,7 +37,7 @@ public struct Note {
 }
 
 extension Note {
-    internal static func -(lhs: Note, rhs: Note) -> Interval {
+    static func -(lhs: Note, rhs: Note) -> Interval {
         var lhs = lhs.chromaticValue
         if lhs < rhs.chromaticValue {
             lhs += 12

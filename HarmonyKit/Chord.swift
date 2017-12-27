@@ -17,7 +17,8 @@ public struct Chord {
                                           scaleNotes[$0.index].octave) }
     }
     
-    internal init(_ notes: Notes) {
+    // TODO - change this to use ChordParts instead of intervals
+    init(_ notes: Notes) {
         self.notes = notes
         self.root = notes.first!
         

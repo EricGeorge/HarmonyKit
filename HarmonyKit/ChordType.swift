@@ -13,7 +13,7 @@ public enum ChordType {
     case minorSeventh
     case unknown
     
-    public static let all:[ChordType] = [.major, minor, .diminished, .augmented, sus2, sus4, dominantSeventh, majorSeventh, minorMajorSeventh, minorSeventh]
+    static let all:[ChordType] = [.major, minor, .diminished, .augmented, sus2, sus4, dominantSeventh, majorSeventh, minorMajorSeventh, minorSeventh]
     
     var intervals: [Interval] {
         switch self {
