@@ -46,31 +46,31 @@ public struct Scale {
 
 extension Scale {
     public var tonicTriad: Chord {
-        return Chord(ScaleDegree.tonic.triads.map { notes[$0] })
+        return Chord(self.notes[ScaleDegree.tonic.rawValue], self.type.triads[ScaleDegree.tonic.rawValue])
     }
     
     public var supertonicTriad: Chord {
-        return Chord(ScaleDegree.supertonic.triads.map { notes[$0] })
+        return Chord(self.notes[ScaleDegree.supertonic.rawValue], self.type.triads[ScaleDegree.supertonic.rawValue])
     }
-    
+
     public var mediantTriad: Chord {
-        return Chord(ScaleDegree.mediant.triads.map { notes[$0] })
+        return Chord(self.notes[ScaleDegree.mediant.rawValue], self.type.triads[ScaleDegree.mediant.rawValue])
     }
-    
+
     public var subdominantTriad: Chord {
-        return Chord(ScaleDegree.subdominant.triads.map { self.notes(for: 2)[$0] })
+        return Chord(self.notes[ScaleDegree.subdominant.rawValue], self.type.triads[ScaleDegree.subdominant.rawValue])
     }
-    
+
     public var dominantTriad: Chord {
-         return Chord(ScaleDegree.dominant.triads.map { self.notes(for: 2)[$0] })
+        return Chord(self.notes[ScaleDegree.dominant.rawValue], self.type.triads[ScaleDegree.dominant.rawValue])
     }
-    
+
     public var submedianTriad: Chord {
-        return Chord(ScaleDegree.submedian.triads.map { self.notes(for: 2)[$0] })
+        return Chord(self.notes[ScaleDegree.submedian.rawValue], self.type.triads[ScaleDegree.submedian.rawValue])
     }
-    
+
     public var leadingTriad: Chord {
-        return Chord(ScaleDegree.leading.triads.map { self.notes(for: 2)[$0] })
+        return Chord(self.notes[ScaleDegree.leading.rawValue], self.type.triads[ScaleDegree.leading.rawValue])
     }
 }
 
