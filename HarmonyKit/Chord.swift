@@ -16,28 +16,6 @@ public struct Chord {
                                           scaleNotes[$0.index].accidental + $0.accidental,
                                           scaleNotes[$0.index].octave) }
     }
-    
-    // TODO - change this to use ChordParts instead of intervals 
-//    init(_ notes: Notes) {
-//        self.notes = notes
-//        self.root = notes.first!
-//        
-//        var type: ChordType = .unknown
-//        
-//        var intervals: [Interval] = []
-//        for index in 1...notes.count - 1 {
-//            intervals = intervals + [notes[index] - notes[index - 1]]
-//        }
-//        
-//        for chordType in ChordType.all {
-//            if chordType.intervals == intervals {
-//                type = chordType
-//                break
-//            }
-//        }
-//        
-//        self.type = type
-//    }
 }
 
 extension Chord: CustomStringConvertible {

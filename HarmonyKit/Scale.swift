@@ -65,12 +65,12 @@ extension Scale {
         return Chord(self.notes[ScaleDegree.dominant.rawValue], self.type.triads[ScaleDegree.dominant.rawValue])
     }
 
-    public var submedianTriad: Chord {
-        return Chord(self.notes[ScaleDegree.submedian.rawValue], self.type.triads[ScaleDegree.submedian.rawValue])
+    public var submediantTriad: Chord {
+        return Chord(self.notes[ScaleDegree.submediant.rawValue], self.type.triads[ScaleDegree.submediant.rawValue])
     }
 
-    public var leadingTriad: Chord {
-        return Chord(self.notes[ScaleDegree.leading.rawValue], self.type.triads[ScaleDegree.leading.rawValue])
+    public var subtonicTriad: Chord {
+        return Chord(self.notes[ScaleDegree.subtonic.rawValue], self.type.triads[ScaleDegree.subtonic.rawValue])
     }
 }
 
