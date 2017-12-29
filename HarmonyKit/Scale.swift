@@ -44,6 +44,12 @@ public struct Scale {
     }
 }
 
+extension Scale : CustomStringConvertible {
+    public var description: String {
+        return "\(self.root) \(self.type)"
+    }
+}
+
 extension Scale {
     public var tonicTriad: Chord {
         return Chord(self.notes[ScaleDegree.tonic.rawValue], self.type.triads[ScaleDegree.tonic.rawValue])
