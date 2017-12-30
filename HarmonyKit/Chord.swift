@@ -22,6 +22,12 @@ public struct Chord {
                                           scaleNotes[$0.index].accidental + $0.accidental,
                                           scaleNotes[$0.index].octave) }
     }
+    
+    // TODO - how do we deal with negative inversions?
+    public func notes(invertedBy index: Int) -> Notes {
+        let invertedNotes = notes[0..<index]
+        return Array(notes[index..<notes.count] + invertedNotes.map{ Note($0.name, $0.accidental, $0.octave + 1)})
+    }
 }
 
 extension Chord: CustomStringConvertible {

@@ -29,4 +29,5 @@ print("")
 
 let cMajorChord = Chord(Note(.C, .natural, 5), .minorSeventh)
 print("\(cMajorChord) is \(cMajorChord.notes)")
+print("\(cMajorChord) 2nd inversion is \(cMajorChord.notes(invertedBy: 2))")
 
