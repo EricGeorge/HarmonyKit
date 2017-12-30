@@ -8,7 +8,16 @@ print("The \(scale) scale is \(scale.notes)")
 
 print("")
 
-print("The tonic chord for \(scale) is \(scale.tonicTriad): \(scale.tonicTriad.notes) which is the \(scale.tonicTriad.romanName!) chord")
+// long way
+let tonicTriad = scale.tonicTriad
+if let tonicTriadRomanName = scale.tonicTriad.romanName {
+    print("The tonic chord for \(scale) is \(tonicTriad): \(tonicTriad.notes) which is the \(tonicTriadRomanName) chord")
+} else {
+    print("The tonic chord for \(scale) is \(tonicTriad): \(tonicTriad.notes)")
+}
+
+// shorter way
+//print("The tonic chord for \(scale) is \(scale.tonicTriad): \(scale.tonicTriad.notes) which is the \(scale.tonicTriad.romanName!) chord")
 print("The supertonic chord for \(scale) is \(scale.supertonicTriad): \(scale.supertonicTriad.notes) which is the \(scale.supertonicTriad.romanName!) chord")
 print("The mediant chord for \(scale) is \(scale.mediantTriad): \(scale.mediantTriad.notes) which is the \(scale.mediantTriad.romanName!) chord")
 print("The subdominant chord for \(scale) is \(scale.subdominantTriad): \(scale.subdominantTriad.notes) which is the \(scale.subdominantTriad.romanName!) chord")
