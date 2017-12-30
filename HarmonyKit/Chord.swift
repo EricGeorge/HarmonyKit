@@ -4,10 +4,16 @@ public struct Chord {
     public let notes: Notes
     let type: ChordType
     let root: Note
+    public var romanName: String?
     
     public init(_ root: Note, _ type: ChordType) {
+        self.init(root, type, "")
+    }
+    
+    public init(_ root: Note, _ type: ChordType, _ romanName: String) {
         self.root = root
         self.type = type
+        self.romanName = romanName
         
         let scale = Scale(root, .major)
         let scaleNotes = scale.notes(for: 2)

@@ -52,31 +52,31 @@ extension Scale : CustomStringConvertible {
 
 extension Scale {
     public var tonicTriad: Chord {
-        return Chord(self.notes[ScaleDegree.tonic.rawValue], self.type.triads[ScaleDegree.tonic.rawValue])
+        return Chord(self.notes[ScaleDegree.tonic.rawValue], self.type.triads[ScaleDegree.tonic.rawValue], self.type.roman[ScaleDegree.tonic.rawValue])
     }
     
     public var supertonicTriad: Chord {
-        return Chord(self.notes[ScaleDegree.supertonic.rawValue], self.type.triads[ScaleDegree.supertonic.rawValue])
+        return Chord(self.notes[ScaleDegree.supertonic.rawValue], self.type.triads[ScaleDegree.supertonic.rawValue], self.type.roman[ScaleDegree.supertonic.rawValue])
     }
 
     public var mediantTriad: Chord {
-        return Chord(self.notes[ScaleDegree.mediant.rawValue], self.type.triads[ScaleDegree.mediant.rawValue])
+        return Chord(self.notes[ScaleDegree.mediant.rawValue], self.type.triads[ScaleDegree.mediant.rawValue], self.type.roman[ScaleDegree.mediant.rawValue])
     }
 
     public var subdominantTriad: Chord {
-        return Chord(self.notes[ScaleDegree.subdominant.rawValue], self.type.triads[ScaleDegree.subdominant.rawValue])
+        return Chord(self.notes[ScaleDegree.subdominant.rawValue], self.type.triads[ScaleDegree.subdominant.rawValue], self.type.roman[ScaleDegree.subdominant.rawValue])
     }
 
     public var dominantTriad: Chord {
-        return Chord(self.notes[ScaleDegree.dominant.rawValue], self.type.triads[ScaleDegree.dominant.rawValue])
+        return Chord(self.notes[ScaleDegree.dominant.rawValue], self.type.triads[ScaleDegree.dominant.rawValue], self.type.roman[ScaleDegree.dominant.rawValue])
     }
 
     public var submediantTriad: Chord {
-        return Chord(self.notes[ScaleDegree.submediant.rawValue], self.type.triads[ScaleDegree.submediant.rawValue])
+        return Chord(self.notes[ScaleDegree.submediant.rawValue], self.type.triads[ScaleDegree.submediant.rawValue], self.type.roman[ScaleDegree.submediant.rawValue])
     }
 
     public var subtonicTriad: Chord {
-        return Chord(self.notes[ScaleDegree.subtonic.rawValue], self.type.triads[ScaleDegree.subtonic.rawValue])
+        return Chord(self.notes[ScaleDegree.subtonic.rawValue], self.type.triads[ScaleDegree.subtonic.rawValue], self.type.roman[ScaleDegree.subtonic.rawValue])
     }
 }
 
