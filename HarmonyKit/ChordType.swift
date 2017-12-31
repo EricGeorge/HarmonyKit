@@ -11,7 +11,6 @@ public enum ChordType {
     case majorSeventh
     case minorMajorSeventh
     case minorSeventh
-    case unknown
     
     public static let all:[ChordType] = [.major, minor, .diminished, .augmented, sus2, sus4, dominantSeventh, majorSeventh, minorMajorSeventh, minorSeventh]
     
@@ -29,8 +28,6 @@ public enum ChordType {
         case .majorSeventh: return [.M3, .m3, .M3]
         case .minorMajorSeventh: return [.m3, .M3, .M3]
         case .minorSeventh: return [.m3, .M3, .m3]
-            
-        case .unknown: return []
         }
     }
         
@@ -48,8 +45,6 @@ public enum ChordType {
         case .majorSeventh: return [.first, .third, .fifth, .seventh]
         case .minorMajorSeventh: return [.first, .flatThird, .fifth, .seventh]
         case .minorSeventh: return [.first, .flatThird, .fifth, .flatSeventh]
-
-        case .unknown: return []
         }
     }
 }
@@ -69,8 +64,6 @@ extension ChordType : CustomStringConvertible {
         case .majorSeventh: return "Δ7"
         case .minorMajorSeventh: return "mΔ7"
         case .minorSeventh: return "m7"
-            
-        case .unknown: return "unknown"
         }
     }
 }

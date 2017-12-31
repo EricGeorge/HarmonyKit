@@ -54,6 +54,7 @@ extension Note: CustomStringConvertible {
 }
 
 // MARK: Helpers
+// TODO - Need to generalize the octave math someplace
 func nextNatural(_ note: Note) -> Note {
     return Note((note.name + 1), .natural, (note.name == .B) ? (note.octave + 1) : note.octave)
 }

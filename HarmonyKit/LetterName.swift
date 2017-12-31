@@ -15,11 +15,6 @@ extension LetterName {
         let newRawValue = (lhs.rawValue + rhs) % 7
         return LetterName(rawValue: newRawValue)!
     }
-    
-    static postfix func ++(noteType: inout LetterName) -> LetterName {
-        noteType = noteType + 1
-        return noteType
-    }
 }
 
 extension LetterName: CustomStringConvertible {
