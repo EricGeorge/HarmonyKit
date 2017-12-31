@@ -48,7 +48,8 @@ extension Note {
 
 extension Note: CustomStringConvertible {
     public var description: String {
-        return "\(name.description)\(accidental.description(true))\(octave)"
+        return "\(name.description)\(accidental.description(true))"
+//        return "\(name.description)\(accidental.description(true))\(octave)"
     }
 }
 

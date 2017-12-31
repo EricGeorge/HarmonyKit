@@ -18,6 +18,8 @@ print("")
 for extendedChordType in ChordType.all {
     let chord = Chord(root, extendedChordType)
     print("\(chord) is \(chord.notes)")
-    print("--- 2nd inversion is \(chord.notes(invertedBy: 2))")
-    print("")
 }
+
+print("")
+let chord = Chord(root, .dominantSeventh)
+print("The 2nd inversion of \(chord) is \(chord.notes(invertedBy: 2)))")
